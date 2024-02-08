@@ -74,7 +74,7 @@ class GibberishText(Validator):
         if pipeline is None:
             raise ValueError(
                 "You must install transformers in order to "
-                "use the ToxicLanguage validator."
+                "use the GibberishText validator."
                 "Install it using `pip install transformers`."
             )
 
@@ -107,7 +107,7 @@ class GibberishText(Validator):
     def validate_each_sentence(
         self, value: str, metadata: Dict[str, Any]
     ) -> ValidationResult:
-        """Validate that each sentence in the generated text is toxic."""
+        """Validate that each sentence in the generated text is gibberish."""
 
         if nltk is None:
             raise ImportError(
@@ -141,7 +141,7 @@ class GibberishText(Validator):
     def validate_full_text(
         self, value: str, metadata: Dict[str, Any]
     ) -> ValidationResult:
-        """Validate that the entire generated text is toxic."""
+        """Validate that the entire generated text is gibberish."""
 
         is_gibberish = self.is_gibberish(value)
         if is_gibberish:
