@@ -64,13 +64,13 @@ guard = Guard.from_pydantic(output_class=PetInfo)
 # Run LLM output generating JSON through guard
 guard.parse("""
 {
-    "pet_name": "Caesar is a great dog",
+    "pet_description": "Caesar is a great dog",
 }
 """)
 
 guard.parse("""
 {
-    "pet_name": "Cdfhgg great coffee"
+    "pet_description": "Cdfhgg great coffee"
 }
 """)
 ```
