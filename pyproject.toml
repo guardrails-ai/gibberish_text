@@ -1,5 +1,5 @@
 [project]
-name = "gibberish-text"
+name = "gibberish_text"
 version = "0.0.0"
 description = "A Guardrails AI validator to detect gibberish text."
 authors = [

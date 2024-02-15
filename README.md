@@ -15,14 +15,14 @@ This validator checks if an LLM-generated text is gibberish/non-sensical. It val
 ## Installation
 
 ```bash
-$ guardrails hub install hub://guardrails/gibberish-text
+$ guardrails hub install hub://guardrails/gibberish_text
 ```
 
 ## Usage Examples
 
 ### Validating string output via Python
 
-In this example, we use the `gibberish-text` validator on any LLM generated text.
+In this example, we use the `gibberish_text` validator on any LLM generated text.
 
 ```python
 # Import Guard and Validator
@@ -44,7 +44,7 @@ guard.parse("The quick brown fox jumps over the lazy dog. Fox fox fox fox fox. F
 ```
 ### Validating JSON output via Python
 
-In this example, we use the `gibberish-text` validator on a pet description string.
+In this example, we use the `gibberish_text` validator on a pet description string.
 
 ```python
 # Import Guard and Validator
