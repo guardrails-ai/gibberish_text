@@ -4,7 +4,7 @@
 | --- | --- |
 | Date of development | Feb 15, 2024 |
 | Validator type | Format |
-| Blog |  |
+| Blog | - |
 | License | Apache 2 |
 | Input/Output | Output |
 
@@ -13,12 +13,12 @@
 This validator checks if an LLM-generated text is gibberish/non-sensical. It can validate either sentence by sentence or the entire text as a whole.
 
 ## Requirements
-- Dependencies: `nltk`, `transformers`
+- Dependencies: `nltk`, `transformers`, `torch`
 
 ## Installation
 
 ```bash
-$ guardrails hub install hub://guardrails/gibberish_text
+guardrails hub install hub://guardrails/gibberish_text
 ```
 
 ## Usage Examples
@@ -65,7 +65,7 @@ Initializes a new instance of the Validator class.
 
 <br/>
 
-**`__call__(self, value, metadata={}) → ValidationOutcome`**
+**`__call__(self, value, metadata={}) → ValidationResult`**
 
 <ul>
 
