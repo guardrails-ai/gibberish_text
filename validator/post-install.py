@@ -33,13 +33,21 @@ def load_nltk_data():
         except LookupError:
             nltk.download("punkt_tab")
 
-    target_major, target_minor, target_patch = parse_major_minor_patch(nltk_breaking_version)
-    major, minor, patch = parse_major_minor_patch(nltk_version)
+    try:
+        target_major, target_minor, target_patch = parse_major_minor_patch(nltk_breaking_version)
+        major, minor, patch = parse_major_minor_patch(nltk_version)
 
-    if (major, minor, patch) >= (target_major, target_minor, target_patch):
-        install_post_382_dataset()
-    elif (major, minor, patch) < (target_major, target_minor, target_patch):
-        install_pre_382_dataset()
+        if (major, minor, patch) >= (target_major, target_minor, target_patch):
+            install_post_382_dataset()
+        elif (major, minor, patch) < (target_major, target_minor, target_patch):
+            install_pre_382_dataset()
+    except Exception:
+        print((
+            "Error auto-installing nltk dataset, please install manually.\n"
+            "This can be done with:\n",
+            "Version < 3.8.2:\n import nltk\n nltk.download('punkt')",
+            "Version >= 3.8.2:\n import nltk\n nltk.download('punkt_tab')"
+        ))
 
 load_nltk_data()
 
