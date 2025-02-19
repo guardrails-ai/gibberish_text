@@ -133,3 +133,5 @@ class GibberishText(Validator):
 
         if self._validation_method == "full":
             return self.validate_full_text(value, metadata)
+        
+        raise ValueError("validation_method must be 'sentence' or 'full'.")

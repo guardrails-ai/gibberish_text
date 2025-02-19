@@ -1,4 +1,3 @@
-import nltk
 from transformers import pipeline
 
 # Download NLTK data if not already present
